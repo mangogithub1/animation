@@ -1,0 +1,35 @@
+Development Tools
+=================
+
+Code playgrounds:
+
+	http://cssdeck.com/
+	http://jsfiddle.net/
+	http://codepen.io/
+	http://jsbin.com/
+	http://dabblet.com/
+	http://tinkerbin.com/
+	http://liveweave.com/
+	http://bin.jhere.net/
+	http://tinker.io/
+	http://css3please.com/
+
+Compatibility tools:
+
+	http://caniuse.com/
+	http://fmbip.com/litmus/
+
+Cubic-bezier tools:
+
+	http://matthewlein.com/ceaser/
+	http://cubic-bezier.com/
+
+Testing Internet Explorer with free Virtual Machines
+
+	http://www.modern.ie/
+
+CSS3 inspiration
+
+	http://leaverou.github.io/animatable/
+	http://www.google.com/
+	http://www.bing.com/

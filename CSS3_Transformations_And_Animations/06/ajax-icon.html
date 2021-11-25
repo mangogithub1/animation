@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>A CSS3 Ajax Loading Icon Without Images</title>
+
+<style>
+body
+{
+	font-family: sans-serif;
+	font-size: 100%;
+	margin: 20px;
+	color: #eee;
+	background-color: #222;
+}
+
+h1
+{
+	font-size: 1.5em;
+	font-weight: normal;
+	margin: 0 0 0.1em 0;
+	color: #ffa;
+}
+
+h2
+{
+	font-size: 1.3em;
+	font-weight: normal;
+	margin: 1.5em 0 0 0;
+	color: #ffa;
+}
+
+p
+{
+	margin: 0 0 1em 0;
+}
+
+a:link, a:visited
+{
+	color: #acf;
+	text-decoration: none;
+	outline: 0 none;
+}
+
+a:hover, a:focus
+{
+	color: #fff;
+	text-decoration: underline;
+	text-shadow: 0 0 2px #fff;
+}
+
+#off
+{
+	position: absolute;
+	width: 0;
+	height: 0;
+}
+
+#ajaxloader1, #ajaxloader2, #ajaxloader3, #ajaxloader4
+{
+	display: none;
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	left: 50%;
+	top: 15%;
+	margin: 0 0 0 -15px;
+	border: 8px solid #fff;
+	border-right-color: transparent;
+	border-radius: 50%;
+	box-shadow: 0 0 25px 2px #eee;
+	-webkit-animation: spin 1s linear infinite;
+	animation: spin 1s linear infinite;
+}
+
+#ajaxloader2
+{
+	border-right: 0 none;
+}
+
+#ajaxloader3
+{
+	border-left-color: transparent;
+}
+
+#ajaxloader4
+{
+	border-bottom-color: transparent;
+}
+
+#ajaxloader3::after, #ajaxloader4::after
+{
+	display: block;
+	content: " ";
+	width: 9px;
+	height: 9px;
+	border: 6px solid #fff;
+	margin: 4px;
+	border-radius: 50%;
+}
+
+#ajaxloader3::after
+{
+	border-left-color: transparent;
+	border-right-color: transparent;
+}
+
+#ajaxloader4::after
+{
+	width: 13px;
+	height: 13px;
+	margin: 1px;
+	border-width: 8px;
+	border-top-color: transparent;
+	border-left-color: transparent;
+}
+
+@-webkit-keyframes spin
+{
+	from { -webkit-transform: rotate(0deg); opacity: 0.2; }
+	50%  { -webkit-transform: rotate(180deg); opacity: 1; }
+	to   { -webkit-transform: rotate(360deg); opacity: 0.2; }
+}
+
+@keyframes spin
+{
+	from { transform: rotate(0deg); opacity: 0.2; }
+	50%  { transform: rotate(180deg); opacity: 1; }
+	to   { transform: rotate(360deg); opacity: 0.2; }
+}
+</style>
+
+</head>
+<body>
+
+<h1>A CSS3 Ajax Loading Icon Without Images</h1>
+
+<p>The following links show a CSS3 animation in the center of the page which could be used when waiting for responses from Ajax requests or other time-sensitive actions.</p>
+
+<div id="ajaxloader1"></div>
+<div id="ajaxloader2"></div>
+<div id="ajaxloader3"></div>
+<div id="ajaxloader4"></div>
+<div id="off"></div>
+
+<ul>
+<li><a href="#ajaxloader1">Show Ajax loader example 1</a></li>
+<li><a href="#ajaxloader2">Show Ajax loader example 2</a></li>
+<li><a href="#ajaxloader3">Show Ajax loader example 3</a></li>
+<li><a href="#ajaxloader4">Show Ajax loader example 4</a></li>
+<li><a href="#off">Switch off</a></li>
+</ul>
+
+<script>
+var spinner = [], a = document.getElementsByTagName("a");
+for (var i=0; i < a.length; i++) {
+	if (a[i].hash) {
+		var n = document.getElementById(a[i].hash.substring(1));
+		if (n) {
+			spinner.push(n);
+			a[i].onclick = function(e) {
+				var t = (e ? e.target : window.event.srcElement);
+				for (var i=0; i<spinner.length; i++) {
+					spinner[i].style.display = (spinner[i].id == t.hash.substring(1) ? "block" : "none");
+				}
+				return false;		
+			};
+		}
+	}
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Tooltip Demonstration</title>
+<style>
+body
+{
+	font: 100%/1.2em sans-serif;
+	padding: 20px 10%;
+	margin: 0;
+	color: #333;
+	background-color: #eee;
+}
+
+h1
+{
+	font-size: 1.6em;
+	font-weight: normal;
+	margin: 0;
+}
+
+*[data-title]
+{
+	display: inline;
+    position: relative;
+	border-bottom: 1px dotted #333;
+	cursor: help;
+}
+
+*[data-title]:before, *[data-title]:after
+{
+	content: "";
+	position: absolute;
+	font-size: 0.8em;
+	opacity: 0;
+	z-index: 9999;
+	-webkit-transform: scaleY(0);
+	transform: scaleY(0);
+	-webkit-transform-origin: left bottom;
+	transform-origin: left bottom;
+	-webkit-transition: all 300ms ease 200ms;
+	transition: all 300ms ease 200ms;
+}
+		
+*[data-title]:before
+{
+	content: attr(data-title);
+	width: 12em;
+	bottom: 1em;
+	text-align: center;
+	line-height: 1.1em;
+	padding: 0.2em 0.5em;
+	color: #555;
+	background-color: #ff8;
+	border-radius: 5px;
+	box-shadow: 0 2px 3px rgba(0,0,0,0.2);
+}
+		
+*[data-title]:after	
+{
+	width: 0;
+	height: 0;
+	left: 2em;
+	bottom: 0em;
+	border: 0.6em solid transparent;
+	border-top-color: #ff8;
+	-webkit-transform-origin: left top;
+	transform-origin: left top;
+}
+
+*[data-title]:hover:before, *[data-title]:hover:after
+{
+	bottom: 2em;
+	opacity: 1;
+	-webkit-transform: scaleY(1);
+	transform: scaleY(1);
+}
+
+*[data-title]:hover:after
+{
+	bottom: 1em;
+}
+</style>
+</head>
+<body>
+
+<h1>CSS3 Animated Tooltips</h1>
+
+<p>
+This page demonstrates 
+<span data-title="No JavaScript is required!">CSS3-only tooltips</span> 
+which can be applied to any element using 
+<span data-title="the text which must appear in the tooltip">title text</span> 
+within 
+<span data-title="a standard title shows a normal browser tooltip">a data-title attribute</span>.
+</p>
+
+</body>
+</html>

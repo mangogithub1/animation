@@ -1,0 +1,18 @@
+Development Resources
+=====================
+
+Documentation:
+
+	http://www.w3.org/
+	http://www.w3.org/Style/CSS/
+	http://www.w3.org/standards/webdesign/htmlcss
+	http://www.webplatform.org/
+	http://developer.mozilla.org/
+	http://dev.opera.com/
+
+General tutorials:
+
+	http://www.sitepoint.com/
+	http://css-tricks.com/
+	http://alistapart.com/
+	http://net.tutsplus.com/

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Link Blur-In and Blur-Out Demonstration</title>
+
+<style>
+body
+{
+	font: 100%/1.2em sans-serif;
+	padding: 20px 10%;
+	margin: 0;
+	color: #333;
+	background-color: #eee;
+}
+
+h1, h2
+{
+	font-size: 1.6em;
+	font-weight: normal;
+	margin: 0;
+}
+
+h2
+{
+	font-size: 1.3em;
+	margin-top: 1.5em;
+}
+
+p.links
+{
+	font-size: 1.6em;
+	font-weight: bold;
+	text-align: center;
+}
+
+a.blur
+{
+	text-decoration: none;
+	color: #339;
+}
+
+a.blur:hover, a.blur:focus
+{
+	text-decoration: underline;
+	color: #933;
+}
+
+.textshadow a.blur, .textshadow a.blur:hover, .textshadow a.blur:focus
+{
+	text-decoration: none;
+	color: rgba(0,0,0,0);
+	outline: 0 none;
+	-webkit-transition: all 400ms ease 100ms;
+	transition: all 400ms ease 100ms;
+}
+
+.textshadow a.blur,
+.textshadow a.blur.out:hover, .textshadow a.blur.out:focus
+{
+	text-shadow: 0 0 4px #339;
+}
+
+.textshadow a.blur.out,
+.textshadow a.blur:hover, .textshadow a.blur:focus
+{
+	text-shadow: 0 0 0 #339;
+}
+</style>
+
+</head>
+<body>
+
+<h1>Link Blur-In and Blur-Out Demonstration</h1>
+
+<p>The following links blur in on hover/focus:</p>
+
+<p class="links">
+<a href="#" class="blur">Blur-in link 1</a> |
+<a href="#" class="blur">Link 2</a> |
+<a href="#" class="blur">Link 3</a>
+</p>
+
+<p>The following links blur out on hover/focus:</p>
+
+<p class="links">
+<a href="#" class="blur out">Blur-out link 1</a> |
+<a href="#" class="blur out">Link 2</a> |
+<a href="#" class="blur out">Link 3</a>
+</p>
+
+<script>
+// append textshadow class to HTML node if supported (Modernizr will do the same)
+if (document.createElement("detect").style.textShadow === "") {
+	document.getElementsByTagName("html")[0].className += " textshadow";
+}
+</script>
+</body>
+</html>
